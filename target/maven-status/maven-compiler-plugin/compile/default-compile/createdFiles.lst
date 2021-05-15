@@ -1,0 +1,5 @@
+BankingApplication/BankingApplicationConfiguration.class
+BankingApplication/resources/BankingApplicationResource.class
+BankingApplication/BankingApplication.class
+BankingApplication/config/BankingApplicationModule.class
+BankingApplication/health/BankingApplicationHealthCheck.class
