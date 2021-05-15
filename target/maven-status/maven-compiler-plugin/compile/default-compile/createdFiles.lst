@@ -1,5 +1,9 @@
-BankingApplication/BankingApplicationConfiguration.class
+BankingApplication/service/BankingApplicationService.class
 BankingApplication/resources/BankingApplicationResource.class
 BankingApplication/BankingApplication.class
-BankingApplication/config/BankingApplicationModule.class
+BankingApplication/dto/response/SampleResponse.class
 BankingApplication/health/BankingApplicationHealthCheck.class
+BankingApplication/BankingApplicationConfiguration.class
+BankingApplication/dto/request/SampleRequest.class
+BankingApplication/config/BankingApplicationModule.class
+BankingApplication/enums/Status.class
