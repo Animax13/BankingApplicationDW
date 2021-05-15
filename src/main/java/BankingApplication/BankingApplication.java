@@ -11,8 +11,6 @@ import io.dropwizard.setup.Environment;
 
 public class BankingApplication extends Application<BankingApplicationConfiguration> {
 
-    private static Injector injector;
-
     public static void main(final String[] args) throws Exception {
         new BankingApplication().run(args);
     }
@@ -30,7 +28,7 @@ public class BankingApplication extends Application<BankingApplicationConfigurat
     @Override
     public void run(final BankingApplicationConfiguration configuration,
                     final Environment environment) {
-        injector = Guice.createInjector(new BankingApplicationModule(configuration.getPropertyFileName()));
+        Injector injector = Guice.createInjector(new BankingApplicationModule(configuration.getPropertyFileName()));
         environment.jersey().register(injector.getInstance(BankingApplicationResource.class));
         environment.healthChecks().register("BankingApplicationHealthCheck", new BankingApplicationHealthCheck());
     }
