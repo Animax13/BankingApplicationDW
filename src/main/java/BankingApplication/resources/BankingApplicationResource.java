@@ -1,7 +1,7 @@
 package BankingApplication.resources;
 
-import BankingApplication.dto.request.SampleRequest;
-import BankingApplication.service.BankingApplicationService;
+import BankingApplication.dto.request.TestRequest;
+import BankingApplication.service.TestService;
 import com.google.inject.Inject;
 
 import javax.validation.Valid;
@@ -15,13 +15,13 @@ import javax.ws.rs.core.Response;
 public class BankingApplicationResource {
 
     @Inject
-    private BankingApplicationService bankingApplicationService;
+    private TestService testService;
 
     @Path("/test")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSampleResponse (@Valid SampleRequest request) {
-        return Response.status(Response.Status.OK).entity(bankingApplicationService.getSampleResponse(request)).build();
+    public Response getSampleResponse (@Valid TestRequest request) {
+        return Response.status(Response.Status.OK).entity(testService.getTestResponse(request)).build();
     }
 
 }
