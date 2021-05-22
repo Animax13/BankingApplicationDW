@@ -3,6 +3,7 @@ package BankingApplication.config;
 import com.google.common.io.Resources;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
+import org.hibernate.SessionFactory;
 
 import java.net.URL;
 import java.util.Properties;
@@ -10,9 +11,12 @@ import java.util.Properties;
 public class BankingApplicationModule extends AbstractModule {
 
     private final String propertyFileName;
+    private final SessionFactory sessionFactory;
 
-    public BankingApplicationModule(String propertyFileName) {
+    public BankingApplicationModule(String propertyFileName,
+                                    SessionFactory sessionFactory) {
         this.propertyFileName = propertyFileName;
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
@@ -20,6 +24,8 @@ public class BankingApplicationModule extends AbstractModule {
         Properties properties = new Properties();
         readPropertyFile(properties, propertyFileName+".properties");
         Names.bindProperties(binder(), properties);
+
+        bind(SessionFactory.class).toInstance(sessionFactory);
     }
 
     protected void readPropertyFile(Properties properties, String fileName) {
