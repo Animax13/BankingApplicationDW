@@ -25,6 +25,7 @@ BankingApplication/dao/UserDAO.class
 BankingApplication/constant/ExceptionMessageConstant.class
 BankingApplication/mapper/UserMapper.class
 BankingApplication/BankingApplicationHelper.class
+BankingApplication/BankingApplication$1.class
 BankingApplication/dto/User.class
 BankingApplication/enums/TransactionType.class
 BankingApplication/mapper/CreateAccountRequestToUserMapperImpl.class
